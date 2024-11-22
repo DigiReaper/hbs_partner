@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hbs_partner/screens/accepted_page.dart';
 import 'package:hbs_partner/screens/profile/profile.dart';
 import 'package:hbs_partner/theme.dart'; // Import the theme file to use primaryColor
 
@@ -15,6 +16,42 @@ class _DashboardState extends State<Dashboard> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  void _navigateToPage(String page) {
+    // Add navigation logic for each page here
+    switch (page) {
+      case 'ACCEPTED':
+         Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AcceptedPage()),
+        );
+        break;
+      case 'TODAY':
+        // Navigate to Today page
+        break;
+      case 'TOMORROW':
+        // Navigate to Tomorrow page
+        break;
+      case 'PENDING':
+        // Navigate to Pending page
+        break;
+      case 'IN PROGRESS':
+        // Navigate to In Progress page
+        break;
+      case 'ALL LEADS':
+        // Navigate to All Leads page
+        break;
+      case 'COMPLETED':
+        // Navigate to Completed page
+        break;
+      case 'MISSED':
+        // Navigate to Missed page
+        break;
+      default:
+        // Default action
+        break;
+    }
   }
 
   @override
@@ -40,8 +77,21 @@ class _DashboardState extends State<Dashboard> {
               children: [
                 Column(
                   children: [
-                    Icon(Icons.person, size: 40),
-                    Text('Profile'),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()),
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Icon(Icons.person, size: 40),
+                          Text('Profile'),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 Column(
@@ -49,9 +99,9 @@ class _DashboardState extends State<Dashboard> {
                     Switch(
                       value: _isOnline,
                       onChanged: (bool value) {
-                      setState(() {
-                        _isOnline = value;
-                      });
+                        setState(() {
+                          _isOnline = value;
+                        });
                       },
                       activeColor: Colors.green,
                     ),
@@ -75,6 +125,54 @@ class _DashboardState extends State<Dashboard> {
               style: TextStyle(fontSize: 24),
             ),
           ),
+          SizedBox(height: 20),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              padding: EdgeInsets.all(10),
+              children: [
+                'ACCEPTED',
+                'TODAY',
+                'TOMORROW',
+                'PENDING',
+                'IN PROGRESS',
+                'ALL LEADS',
+                'COMPLETED',
+                'MISSED',
+              ].map((text) {
+                return GestureDetector(
+                  onTap: () {
+                    _navigateToPage(text);
+                  },
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: primaryColor.withOpacity(0.33),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          text,
+                          style: TextStyle(color: Colors.black, fontSize: 18),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 10,
+                        right: 10,
+                        child: Text(
+                          '00000',
+                          style: TextStyle(color: Colors.black, fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
+          )
         ],
       ),
       // bottomNavigationBar: BottomNavigationBar(
