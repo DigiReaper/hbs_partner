@@ -60,7 +60,29 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false, // Remove the back icon
-        title: Text('HB - PARTNER', textAlign: TextAlign.center),
+        title: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+          text: 'HB',
+          style: TextStyle(
+            fontSize: 27,
+            fontWeight: FontWeight.bold,
+            color: primaryColor,
+          ),
+              ),
+              TextSpan(
+          text: ' - PARTNER',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+              ),
+            ],
+          ),
+          textAlign: TextAlign.center,
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -130,7 +152,7 @@ class _DashboardState extends State<Dashboard> {
             child: GridView.count(
               crossAxisCount: 2,
               crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
+              mainAxisSpacing: 1,
               padding: EdgeInsets.all(10),
               children: [
                 'ACCEPTED',
@@ -148,25 +170,29 @@ class _DashboardState extends State<Dashboard> {
                   },
                   child: Stack(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: primaryColor.withOpacity(0.33),
-                          borderRadius: BorderRadius.circular(20),
+                        Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: primaryColor.withOpacity(0.33),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: primaryColor, width: 4),
+                          ),
+                          alignment: Alignment.center,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                text,
+                                style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                '00000',
+                                style: TextStyle(color: Colors.black, fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          text,
-                          style: TextStyle(color: Colors.black, fontSize: 18),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 10,
-                        right: 10,
-                        child: Text(
-                          '00000',
-                          style: TextStyle(color: Colors.black, fontSize: 16),
-                        ),
-                      ),
                     ],
                   ),
                 );
