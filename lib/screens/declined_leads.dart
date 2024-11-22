@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hbs_partner/components/lead_details.dart';
 
-class TodayLeadsScreen extends StatelessWidget {
+class DeclinedLeads extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Today\'s Lead Details'),
+        title: Text('Declined Leads Details'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

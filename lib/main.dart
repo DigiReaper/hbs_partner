@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         title: 'Helloo Bhaiaah',
         theme: appTheme, // Use the theme from the separate file
         home: LoginScreen(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

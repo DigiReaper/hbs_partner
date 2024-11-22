@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hbs_partner/screens/accepted_page.dart';
+import 'package:hbs_partner/screens/accepted_leads.dart';
+import 'package:hbs_partner/screens/declined_leads.dart';
+import 'package:hbs_partner/screens/completed_leads.dart';
+import 'package:hbs_partner/screens/inprogress_leads.dart';
+import 'package:hbs_partner/screens/missed_leads.dart';
+import 'package:hbs_partner/screens/pending_leads.dart';
 import 'package:hbs_partner/screens/profile/profile.dart';
+import 'package:hbs_partner/screens/today_leads.dart';
+import 'package:hbs_partner/screens/tomorrow_leads.dart';
 import 'package:hbs_partner/theme.dart'; // Import the theme file to use primaryColor
 
 class Dashboard extends StatefulWidget {
@@ -28,25 +35,39 @@ class _DashboardState extends State<Dashboard> {
         );
         break;
       case 'TODAY':
-        // Navigate to Today page
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => TodayLeadsScreen()));
         break;
       case 'TOMORROW':
-        // Navigate to Tomorrow page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => TomorrowLeads()));
         break;
       case 'PENDING':
-        // Navigate to Pending page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PendingLeadsScreen()));
         break;
       case 'IN PROGRESS':
-        // Navigate to In Progress page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => InProgressLeadsScreen()));
         break;
-      case 'ALL LEADS':
-        // Navigate to All Leads page
+      case 'DECLINED':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DeclinedLeads()));
         break;
       case 'COMPLETED':
-        // Navigate to Completed page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CompletedLeads()));
         break;
       case 'MISSED':
-        // Navigate to Missed page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MissedLeads()));
         break;
       default:
         // Default action
@@ -130,7 +151,12 @@ class _DashboardState extends State<Dashboard> {
                     Text('Online'),
                   ],
                 ),
-                Icon(Icons.notifications, size: 40),
+                Column(
+                  children: [
+                    Icon(Icons.notifications, size: 40),
+                    Text('Notifications'),
+                  ],
+                ),
               ],
             ),
           ),
