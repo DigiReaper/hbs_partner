@@ -1,0 +1,90 @@
+name: hbs_partner
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+2
+
+environment:
+  sdk: '>=3.4.3<4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  flutter_web_frame:
+  dio: ^5.7.0
+  provider: ^6.1.2
+  toasty_box: ^1.0.4
+  shared_preferences: ^2.3.2
+  cached_network_image: ^3.4.1
+  path_provider: ^2.1.4
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
+  flutter_native_splash: ^2.4.1
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/home/
+    - assets/images/appliances/
+  fonts:
+    - family: Figtree
+      fonts:
+        - asset: assets/fonts/figtree/Figtree-Regular.ttf
+        - asset: assets/fonts/figtree/Figtree-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/figtree/Figtree-Italic.ttf
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-Light.ttf
+          weight: 300
+        - asset: assets/fonts/figtree/Figtree-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/figtree/Figtree-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/figtree/Figtree-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-Black.ttf
+          weight: 900
+        - asset: assets/fonts/figtree/Figtree-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/figtree/Figtree-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/logo.png
+  android_12:
+    image: assets/images/logo.png
+    color: "#ffffff"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
