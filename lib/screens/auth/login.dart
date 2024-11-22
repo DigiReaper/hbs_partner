@@ -189,6 +189,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
+
+                Center(
+                child: TextButton(
+                  onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dashboard()),
+                  );
+                  },
+                  child: Text("DASHBOARD"),
+                ),
+                )
             ],
           ),
         ),
