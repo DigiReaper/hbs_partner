@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hbs_partner/controllers/auth_controller.dart';
-import 'package:hbs_partner/screens/auth/login.dart';
+import 'package:hbs_partner/screens/leads/auth/login.dart';
 import 'package:hbs_partner/screens/profile/edit_profile.dart';
 import 'package:provider/provider.dart';
 import 'package:toasty_box/toast_enums.dart';

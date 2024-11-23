@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hbs_partner/screens/auth/signup.dart';
+import 'package:hbs_partner/screens/leads/auth/signup.dart';
 
 class SignUpBottomSheet extends StatelessWidget {
   @override

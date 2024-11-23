@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hbs_partner/screens/accepted_leads.dart';
-import 'package:hbs_partner/screens/declined_leads.dart';
-import 'package:hbs_partner/screens/completed_leads.dart';
-import 'package:hbs_partner/screens/inprogress_leads.dart';
-import 'package:hbs_partner/screens/missed_leads.dart';
-import 'package:hbs_partner/screens/pending_leads.dart';
+import 'package:hbs_partner/screens/leads/accepted_leads.dart';
+import 'package:hbs_partner/screens/leads/declined_leads.dart';
+import 'package:hbs_partner/screens/leads/completed_leads.dart';
+import 'package:hbs_partner/screens/leads/inprogress_leads.dart';
+import 'package:hbs_partner/screens/leads/missed_leads.dart';
+import 'package:hbs_partner/screens/leads/pending_leads.dart';
 import 'package:hbs_partner/screens/profile/profile.dart';
-import 'package:hbs_partner/screens/today_leads.dart';
-import 'package:hbs_partner/screens/tomorrow_leads.dart';
+import 'package:hbs_partner/screens/leads/today_leads.dart';
+import 'package:hbs_partner/screens/leads/tomorrow_leads.dart';
 import 'package:hbs_partner/theme.dart'; // Import the theme file to use primaryColor
 
 class Dashboard extends StatefulWidget {
@@ -29,45 +29,38 @@ class _DashboardState extends State<Dashboard> {
     // Add navigation logic for each page here
     switch (page) {
       case 'ACCEPTED':
-         Navigator.push(
+        Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => AcceptedPage()),
         );
         break;
       case 'TODAY':
-      Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => TodayLeadsScreen()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => TodayLeadsScreen()));
         break;
       case 'TOMORROW':
         Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => TomorrowLeads()));
+            context, MaterialPageRoute(builder: (context) => TomorrowLeads()));
         break;
       case 'PENDING':
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => PendingLeadsScreen()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => PendingLeadsScreen()));
         break;
       case 'IN PROGRESS':
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => InProgressLeadsScreen()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => InProgressLeadsScreen()));
         break;
       case 'DECLINED':
         Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => DeclinedLeads()));
+            context, MaterialPageRoute(builder: (context) => DeclinedLeads()));
         break;
       case 'COMPLETED':
         Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => CompletedLeads()));
+            context, MaterialPageRoute(builder: (context) => CompletedLeads()));
         break;
       case 'MISSED':
         Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => MissedLeads()));
+            context, MaterialPageRoute(builder: (context) => MissedLeads()));
         break;
       default:
         // Default action
@@ -85,20 +78,20 @@ class _DashboardState extends State<Dashboard> {
           text: TextSpan(
             children: [
               TextSpan(
-          text: 'HB',
-          style: TextStyle(
-            fontSize: 27,
-            fontWeight: FontWeight.bold,
-            color: primaryColor,
-          ),
+                text: 'HB',
+                style: TextStyle(
+                  fontSize: 27,
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
+                ),
               ),
               TextSpan(
-          text: ' - PARTNER',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+                text: ' - PARTNER',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ],
           ),
@@ -162,23 +155,25 @@ class _DashboardState extends State<Dashboard> {
           ),
           SizedBox(height: 20),
           Container(
-            width: 400,
+            width: 250,
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey, width: 4),
-              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: BorderRadius.circular(33),
             ),
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(10),
             child: Text(
               'Wallet balance: 2500',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 20),
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(height: 20),
           Expanded(
             child: GridView.count(
               crossAxisCount: 2,
-              crossAxisSpacing: 10,
+              crossAxisSpacing: 15,
               mainAxisSpacing: 1,
+              childAspectRatio: 1.5,
               padding: EdgeInsets.all(10),
               children: [
                 'ACCEPTED',
@@ -196,29 +191,33 @@ class _DashboardState extends State<Dashboard> {
                   },
                   child: Stack(
                     children: [
-                        Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                            color: primaryColor.withOpacity(0.33),
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: primaryColor, width: 4),
-                          ),
-                          alignment: Alignment.center,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                text,
-                                style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                '00000',
-                                style: TextStyle(color: Colors.black, fontSize: 16),
-                              ),
-                            ],
-                          ),
+                      Container(
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: primaryColor.withOpacity(0.22),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: primaryColor, width: 4),
                         ),
+                        alignment: Alignment.center,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              text,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              '00000',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 );

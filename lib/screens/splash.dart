@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hbs_partner/controllers/auth_controller.dart';
-import 'package:hbs_partner/screens/auth/login.dart';
+import 'package:hbs_partner/screens/leads/auth/login.dart';
 import 'package:hbs_partner/screens/dashboard.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';

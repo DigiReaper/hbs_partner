@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hbs_partner/controllers/auth_controller.dart';
-import 'package:hbs_partner/screens/auth/signup.dart';
-import 'package:hbs_partner/screens/auth/verification.dart';
+import 'package:hbs_partner/screens/leads/auth/signup.dart';
+import 'package:hbs_partner/screens/leads/auth/verification.dart';
 import 'package:hbs_partner/screens/dashboard.dart';
 import 'package:provider/provider.dart';
 import 'package:toasty_box/toast_enums.dart';
